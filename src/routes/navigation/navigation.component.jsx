@@ -31,6 +31,9 @@ const Navigation = () => {
               SIGN IN
             </Link>
           )}
+          {/* <Link className="nav-link" to="/checkout">
+            CHECKOUT
+          </Link> */}
           <CartIcon />
         </div>
         {isCartOpen && <CartDropdown />}
