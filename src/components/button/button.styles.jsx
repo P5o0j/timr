@@ -17,6 +17,13 @@ export const BaseButton = styled.button`
   cursor: pointer;
   display: flex;
   justify-content: center;
+
+  @media (max-width: 768px) {
+    min-width: 70px;
+    font-size: 8px;
+    padding: 0;
+  }
+
   &:hover {
     background-color: white;
     color: black;
