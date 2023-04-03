@@ -1,12 +1,16 @@
 // import { Fragment, useContext } from "react";
-import "./shop.styles.scss";
-
+// import ProductCard from "../../components/product-card/product-card.component";
 // import { CategoriesContext } from "../../contexts/categories.context";
 // import CategoryPreview from "../../components/category-preview/category-preview.component";
-// import ProductCard from "../../components/product-card/product-card.component";
+
+import "./shop.styles.scss";
 import { Route, Routes } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
 import CategoriesPreview from "../categories-preview/categories-previews.component";
 import Category from "../category/category.component";
+import { getCategoriesAndDocuments } from "../../utils/firebase/firebase.utils";
+import { setCategoriesMap } from "../../store/categories/categories.action";
 
 const Shop = () => {
   /*******one of the ways of creating category preview
@@ -36,7 +40,20 @@ const Shop = () => {
       })}
     </div>
   );}
-  */ return (
+  */
+
+  const dispatch = useDispatch();
+
+  // retrieve products from Firestorm db
+  useEffect(() => {
+    const getCategories = async () => {
+      const categoryMap = await getCategoriesAndDocuments("categories");
+      dispatch(setCategoriesMap(categoryMap));
+    };
+    getCategories();
+  }, []);
+
+  return (
     <Routes>
       <Route index element={<CategoriesPreview />} />
       <Route path=":category" element={<Category />} />
