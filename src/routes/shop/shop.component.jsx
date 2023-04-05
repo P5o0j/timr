@@ -10,7 +10,7 @@ import { useEffect } from "react";
 import CategoriesPreview from "../categories-preview/categories-previews.component";
 import Category from "../category/category.component";
 import { getCategoriesAndDocuments } from "../../utils/firebase/firebase.utils";
-import { setCategoriesMap } from "../../store/categories/categories.action";
+import { setCategories } from "../../store/categories/categories.action";
 
 const Shop = () => {
   /*******one of the ways of creating category preview
@@ -47,8 +47,9 @@ const Shop = () => {
   // retrieve products from Firestorm db
   useEffect(() => {
     const getCategories = async () => {
-      const categoryMap = await getCategoriesAndDocuments("categories");
-      dispatch(setCategoriesMap(categoryMap));
+      const categoriesArray = await getCategoriesAndDocuments("categories");
+
+      dispatch(setCategories(categoriesArray));
     };
     getCategories();
   }, []);
