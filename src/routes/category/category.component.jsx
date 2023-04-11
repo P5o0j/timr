@@ -1,7 +1,7 @@
 import { CategoryContainer, CategoryTitle } from "./category.styles";
 
 import { useParams } from "react-router-dom";
-import { useContext, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { selectCategoriesMap } from "../../store/categories/categories.selector";
 
