@@ -6,7 +6,7 @@ const categories = [
     id: 1,
     title: "Hats",
     imageUrl:
-      "https://cdn.shopify.com/s/files/1/0397/0396/9949/products/UP40-SCOUT-BASEBALL-CAP_1200x.jpg?v=1649082073",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdIth0k-pMf7VdEtwj-FgpdxRLXAVcXgMDtA&usqp=CAU",
     route: "shop/hats",
   },
   {

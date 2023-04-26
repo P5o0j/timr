@@ -10,7 +10,7 @@ import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import Category from "../category/category.component";
 import CategoriesPreview from "../categories-preview/categories-previews.component";
-import { fetchCategoriesAsync } from "../../store/categories/categories.action";
+import { fetchCategoriesStart } from "../../store/categories/categories.action";
 
 const Shop = () => {
   /*******one of the ways of creating category preview
@@ -46,7 +46,7 @@ const Shop = () => {
 
   // retrieve products from Firestorm db
   useEffect(() => {
-    dispatch(fetchCategoriesAsync());
+    dispatch(fetchCategoriesStart());
   }, []);
 
   return (
