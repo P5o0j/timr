@@ -12,7 +12,7 @@ import { checkUserSession } from "./store/user/user.action";
 //   createUserDocumentFromAuth,
 //   getCurrentUser,
 // } from "./utils/firebase/firebase.utils";
-// import { setCurrentUser } from "./store/user/user.action";
+// import { setCurrentUser } from "./store/user/user.reducer";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -33,6 +33,19 @@ const App = () => {
 
   //   return unsubscribe;
   // }, [dispatch]);
+
+  // useEffect(() => {
+  //   const unsubscribe = onAuthStateChangedListener((user) => {
+  //     if (user) {
+  //       createUserDocumentFromAuth(user);
+  //     }
+  //     const pickedUser =
+  //       user && (({ accessToken, email }) => ({ accessToken, email }))(user);
+  //     // dispatch(setCurrentUser(user));
+  //     dispatch(setCurrentUser(pickedUser));
+  //   });
+  //   return unsubscribe;
+  // }, []);
 
   return (
     <Routes>

@@ -11,6 +11,7 @@ import { useEffect } from "react";
 import Category from "../category/category.component";
 import CategoriesPreview from "../categories-preview/categories-previews.component";
 import { fetchCategoriesStart } from "../../store/categories/categories.action";
+import { setCategories } from "../../store/categories/categories.reducer";
 
 const Shop = () => {
   /*******one of the ways of creating category preview
